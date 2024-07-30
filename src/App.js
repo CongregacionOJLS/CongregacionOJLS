@@ -30,7 +30,7 @@ function App() {
   }) 
 
   return (
-    <Router basename='CongregacionOJLS'>
+    <Router basename='/CongregacionOJLS'>
       <Routes>
         <Route path="/" element={<Inicio usuario={usuario}/>}>
         </Route>
