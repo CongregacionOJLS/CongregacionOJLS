@@ -1,0 +1,211 @@
+
+
+.faq-container {    
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  padding: 2rem;
+}
+
+.faq-container h2 {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #364f6b;
+}
+
+details {
+  background-color: #f6f8fa;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d8e0e9;
+  color: #364f6b;
+  position: relative;
+  min-width: 800px; /* Añadimos un tamaño mínimo para los cuadros */
+}
+
+details summary {  
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 1rem;
+  cursor: pointer;
+  list-style: none;
+  outline: none;  /* Remove default outline */
+}
+
+details p {
+  padding: 1rem;
+  margin: 0 1rem 1rem 1rem;
+  background: #f6f8fa;
+  border-left: 2px solid #364f6b;
+}
+
+details:hover,
+details[open] {
+  box-shadow: 5px 5px 15px #d9d9d9;
+}
+
+details[open] {
+  background: #ffffff;
+}
+
+details[open] summary {
+  font-weight: 600;
+}
+
+details summary::before {
+  position: absolute;
+  content: "👇";    
+  font-size: 1.75rem;
+  top: 10px;
+  right: 16px;  
+}
+
+details[open] summary::before {
+  -webkit-animation: rotate-emoji 0.6s ease-in-out both;
+  animation: rotate-emoji 0.6s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-emoji {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-emoji {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.sidebar {
+  font-family: "Fugaz One";
+  font-size: x-large;
+  background-color: #beb49e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 197px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 55px;
+  right: 10px;
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+}
+
+.toggle-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn img {
+  width: 60px; /* ajusta el tamaño según necesites */
+  height: auto; /* esto mantiene la proporción de la imagen */
+}
+
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+  background-color: #e9dece;
+  border: 1px solid #ccc;
+}
+
+#searchInput:focus {
+  outline-color: #927e61;
+}
+
+#results {
+  list-style-type: none;
+  padding: 0;
+}
+
+.result {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.result:hover {
+  background-color: #f0f0f0;
+}
+
+#prevButton {
+  z-index: 999; /* Asegura que el botón esté en la parte superior */  
+  padding: 1;
+  cursor: pointer;
+}
+
+#nextButton {
+  z-index: 999; /* Asegura que el botón esté en la parte superior */  
+  padding: 1;
+  cursor: pointer;
+}
+
+.notification {
+  position: fixed;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px  #62815f;
+  font-size: 20px;
+  background: white;
+  text-align: center;
+  /* Añadir nuevas propiedades para centrar */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.welcome {
+  background: #62815f;
+}
+
+a:visited {
+  color: rgb(255, 253, 253); /* Cambia el color del enlace visitado a púrpura */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}

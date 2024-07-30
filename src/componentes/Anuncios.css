@@ -1,0 +1,68 @@
+body{
+    background-color:rgb(252, 246, 241);
+    font-family: "Fugaz One";
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: #beb49e; /* Color de fondo del sidebar */
+    height: 100vh;
+    width: 200px; /* Ancho del sidebar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: block; /* Por defecto, el sidebar se muestra */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 8px 16px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+  }
+  
+  
+  .toggle-btn {
+    position: fixed;
+    top: 65px;
+    right: 80px;
+    z-index: 999; /* Asegura que el botón esté en la parte superior */
+  }
+  
+  .toggle-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .toggle-btn img {
+    width: 60px; /* ajusta el tamaño según necesites */
+    height: auto; /* esto mantiene la proporción de la imagen */
+  }
+  
+  
+  .visibleContent {
+    margin: 0 0 0 200px;
+  }
+  
+  .hiddenContent {
+    margin: 0 auto;
+  }
