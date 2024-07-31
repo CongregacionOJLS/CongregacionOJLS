@@ -30,9 +30,9 @@ function App() {
 
 
   return (
-    <Router basename='CongregacionOJLS'>
+    <Router basename='/CongregacionOJLS'>
       <Routes>
-        <Route path="/" element={<Inicio usuario={usuario}/>}>
+        <Route exact path="/CongregacionOJLS" element={<Inicio usuario={usuario}/>}>
         </Route>
         <Route path="/NoVisitar" element={<NoVisitar usuario={usuario}/>}>
         </Route>
