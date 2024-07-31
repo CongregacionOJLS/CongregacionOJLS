@@ -13,7 +13,6 @@ import Formulario from './componentes/Formulario';
 
 import appFirebase from './credenciales';
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
-import { render } from '@testing-library/react';
 
 const auth = getAuth(appFirebase)
 
@@ -29,8 +28,9 @@ function App() {
     }
   }) 
 
+
   return (
-    <Router basename='/CongregacionOJLS'>
+    <Router basename='CongregacionOJLS'>
       <Routes>
         <Route path="/" element={<Inicio usuario={usuario}/>}>
         </Route>
@@ -53,6 +53,6 @@ function App() {
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
