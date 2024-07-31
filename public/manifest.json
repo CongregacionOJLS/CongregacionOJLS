@@ -1,6 +1,6 @@
 {
-    "short_name": "App",
-    "name": "My Application",
+    "short_name": "CongregacionOJLS",
+    "name": "CongregacionOJLS",
     "icons": [
       {
         "src": "icono.ico",
@@ -13,4 +13,5 @@
     "theme_color": "#000000",
     "background_color": "#ffffff"
   }
+
   
