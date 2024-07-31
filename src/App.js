@@ -32,7 +32,7 @@ function App() {
   return (
     <Router basename='/CongregacionOJLS'>
       <Routes>
-        <Route exact path="/CongregacionOJLS" element={<Inicio usuario={usuario}/>}>
+        <Route exact path="/" element={<Inicio usuario={usuario}/>}>
         </Route>
         <Route path="/NoVisitar" element={<NoVisitar usuario={usuario}/>}>
         </Route>
