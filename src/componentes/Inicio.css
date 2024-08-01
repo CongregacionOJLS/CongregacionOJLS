@@ -44,12 +44,13 @@ footer {
   display: block; /* Por defecto, el sidebar se muestra */
 }
 
+
 .visibleSideBar {
-  display: block; /* Muestra el elemento */
+  transform: translateX(0) !important; /* Muestra el sidebar */
 }
 
 .hiddenSideBar {
-  display: none; /* Oculta el elemento */
+  transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
 }
 
 .visibleContent {
