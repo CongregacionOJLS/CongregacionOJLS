@@ -18,6 +18,16 @@ body{
     overflow-x: hidden;
     padding-top: 20px;
     display: block; /* Por defecto, el sidebar se muestra */
+    transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+    transform: translateX(0); /* Por defecto, el sidebar se muestra */
+  }
+
+  .visibleSideBar {
+    transform: translateX(0) !important; /* Muestra el sidebar */
+  }
+  
+  .hiddenSideBar {
+    transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
   }
   
   .sidebar ul {
