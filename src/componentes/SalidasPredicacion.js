@@ -48,7 +48,7 @@ function SalidasPredicacion(props) {
             <hr/>
             <h1>Salidas de predicación </h1>
             <hr/>
-            <img src={data[0]? data[0].url: ""} width="600"/>
+            <img className="imgSal" src={data[0]? data[0].url: ""}/>
             <br/>
             <hr/>
       </div>

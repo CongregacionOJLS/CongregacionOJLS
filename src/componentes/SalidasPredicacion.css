@@ -9,6 +9,10 @@ body {
   text-align: center;
 }
 
+.imgSal {
+  width: 600px;
+}
+
 /* Sidebar */
 .sidebar {
   background-color: #beb49e; /* Color de fondo del sidebar */
@@ -103,6 +107,10 @@ a:visited {
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
+  .imgSal {
+    width: 400px;
+  }
+
   .sidebar {
     width: 100px !important; /* Reducir el ancho del sidebar */
   }
@@ -134,6 +142,9 @@ a:visited {
 }
 
 @media (max-width: 480px) {
+  .imgSal {
+    width: 100px;
+  }
   .sidebar {
     display: none; /* Ocultar el sidebar en pantallas muy pequeñas */
   }
