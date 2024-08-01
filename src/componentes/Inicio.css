@@ -116,6 +116,11 @@ a:visited {
 
   .toggle-btn {
     right: 10px; /* Mover el botón de toggle a la derecha */
+    top: 5px;
+  }
+
+  .toggle-btn img {
+    width: 50px;
   }
 
   #Texto, #Horarios {
