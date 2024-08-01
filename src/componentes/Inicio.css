@@ -105,34 +105,34 @@ a:visited {
 
 /* Media Queries para dispositivos móviles */
 
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100px; /* Reducir el ancho del sidebar */
+@media (max-width: 768px){
+  .sidebar{
+    width: 100px !important; /* Reducir el ancho del sidebar */
   }
 
   .visibleContent {
-    margin: 0; /* Ajustar el margen para el contenido visible */
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
   }
 
   .toggle-btn {
-    right: 10px; /* Mover el botón de toggle a la derecha */
-    top: 5px;
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
   }
 
   .toggle-btn img {
-    width: 50px;
+    width: 50px !important;
   }
 
   #Texto, #Horarios {
-    font-size: medium; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
   }
 
   .NoVisitar {
-    font-size: medium; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
   }
 
   footer {
-    padding: 10px; /* Aumentar el padding para dispositivos móviles */
+    padding: 10px !important; /* Aumentar el padding para dispositivos móviles */
   }
 }
 
@@ -143,23 +143,23 @@ a:visited {
 
   .toggle-btn {
     display: block; /* Asegurarse de que el botón de toggle esté visible */
-    right: 10px; /* Mover el botón de toggle a la derecha */
-    top: 5px;
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
   }
 
   .toggle-btn img {
-    width: 50px;
+    width: 50px !important;
   }
 
   .visibleContent {
-    margin: 0; /* Ajustar el margen para el contenido visible */
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
   }
 
   #Texto, #Horarios {
-    font-size: small; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
   }
 
   .NoVisitar {
-    font-size: small; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
   }
 }
