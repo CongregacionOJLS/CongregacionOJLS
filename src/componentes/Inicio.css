@@ -1,7 +1,8 @@
+/* Estilos generales */
 
 .NoVisitar {
-  background-image: url("../../public/img\ territorios/HomeFinal.png");
-  background-size:contain;
+  background-image: url("../../public/img/territorios/HomeFinal.png");
+  background-size: contain;
   background-repeat: repeat-y;
   width: 100%;
   font-family: "Fugaz One", "Paytone One";
@@ -30,7 +31,6 @@ footer {
   1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
-
 .sidebar {
   font-family: "Fugaz One";
   background-color: #beb49e; /* Color de fondo del sidebar */
@@ -44,15 +44,12 @@ footer {
   display: block; /* Por defecto, el sidebar se muestra */
 }
 
-
 .visibleSideBar {
   display: block; /* Muestra el elemento */
-  /*margin: 0 0 0 200px; */
 }
 
 .hiddenSideBar {
   display: none; /* Oculta el elemento */
-  /*margin: 0 auto; */
 }
 
 .visibleContent {
@@ -82,8 +79,6 @@ footer {
   background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
 }
 
-
-
 .toggle-btn {
   position: fixed;
   top: 80px;
@@ -100,11 +95,60 @@ footer {
   height: auto;
 }
 
-
 .welcome {
   background: #62815f;
 }
 
-  a:visited {
-      color: rgb(255, 253, 253); /* Cambia el color del enlace visitado a púrpura */
+a:visited {
+  color: rgb(255, 253, 253); /* Cambia el color del enlace visitado */
+}
+
+/* Media Queries para dispositivos móviles */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100px; /* Reducir el ancho del sidebar */
   }
+
+  .visibleContent {
+    margin: 0; /* Ajustar el margen para el contenido visible */
+  }
+
+  .toggle-btn {
+    right: 10px; /* Mover el botón de toggle a la derecha */
+  }
+
+  #Texto, #Horarios {
+    font-size: medium; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .NoVisitar {
+    font-size: medium; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  footer {
+    padding: 10px; /* Aumentar el padding para dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: none; /* Ocultar el sidebar en pantallas muy pequeñas */
+  }
+
+  .toggle-btn {
+    display: block; /* Asegurarse de que el botón de toggle esté visible */
+  }
+
+  .visibleContent {
+    margin: 0; /* Ajustar el margen para el contenido visible */
+  }
+
+  #Texto, #Horarios {
+    font-size: small; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+
+  .NoVisitar {
+    font-size: small; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+}
