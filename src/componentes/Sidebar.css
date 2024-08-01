@@ -15,11 +15,11 @@
 }
 
 .visibleSideBar {
-  transform: translateX(0); /* Muestra el sidebar */
+  transform: translateX(0) !important; /* Muestra el sidebar */
 }
 
 .hiddenSideBar {
-  transform: translateX(-100%); /* Oculta el sidebar moviéndolo fuera de la vista */
+  transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
 }
 
 .logoutButton {
