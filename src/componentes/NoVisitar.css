@@ -1,5 +1,6 @@
+/* Estilos generales */
 
-
+/* FAQ Container */
 .faq-container {    
   max-width: 800px;
   margin: 50px auto 0 auto;
@@ -22,7 +23,6 @@ details {
   border: 1px solid #d8e0e9;
   color: #364f6b;
   position: relative;
-  min-width: 800px; /* Añadimos un tamaño mínimo para los cuadros */
 }
 
 details summary {  
@@ -87,6 +87,7 @@ details[open] summary::before {
   }
 }
 
+/* Sidebar */
 .sidebar {
   font-family: "Fugaz One";
   font-size: x-large;
@@ -125,9 +126,6 @@ details[open] summary::before {
   top: 55px;
   right: 10px;
   z-index: 999; /* Asegura que el botón esté en la parte superior */
-}
-
-.toggle-btn {
   border: none;
   background: none;
   padding: 0;
@@ -168,13 +166,7 @@ details[open] summary::before {
   background-color: #f0f0f0;
 }
 
-#prevButton {
-  z-index: 999; /* Asegura que el botón esté en la parte superior */  
-  padding: 1;
-  cursor: pointer;
-}
-
-#nextButton {
+#prevButton, #nextButton {
   z-index: 999; /* Asegura que el botón esté en la parte superior */  
   padding: 1;
   cursor: pointer;
@@ -184,11 +176,10 @@ details[open] summary::before {
   position: fixed;
   z-index: 1000;
   padding: 5px;
-  border: 1px  #62815f;
+  border: 1px solid #62815f;
   font-size: 20px;
   background: white;
   text-align: center;
-  /* Añadir nuevas propiedades para centrar */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -208,4 +199,91 @@ a:visited {
 
 .hiddenContent {
   margin: 0 auto;
+}
+
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+  /* FAQ Container */
+  .faq-container {
+    margin: 30px auto;
+    padding: 1rem;
+  }
+
+  .faq-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  details {
+    min-width: 100%; /* Hacer que los cuadros ocupen el 100% del ancho disponible */
+  }
+
+  details summary {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  details p {
+    margin: 0 0.75rem 1rem 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .toggle-btn {
+    display: block; /* Mostrar el botón de toggle para pantallas pequeñas */
+    top: 15px; /* Ajustar la posición del botón */
+    right: 10px;
+  }
+
+  #searchInput {
+    width: 100%; /* Hacer el input de búsqueda ocupar todo el ancho disponible */
+    margin-bottom: 10px;
+  }
+
+  .visibleContent {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .hiddenContent {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .notification {
+    font-size: 18px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 10px;
+  }
+
+  .toggle-btn img {
+    width: 50px; /* Ajustar el tamaño de la imagen del botón para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Asegura que el contenido se adapte bien en pantallas muy pequeñas */
+  .faq-container {
+    padding: 0.5rem;
+  }
+
+  .faq-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .sidebar {
+    display: block; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100%;
+    font-size: xx-large;
+  }
+
+  .toggle-btn img {
+    width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
+  }
 }
