@@ -28,7 +28,7 @@ function NoVisitar(props) {
         
         <details open>
             <summary>Territorio 1</summary>
-            <img src="img territorios/Territorio 1.png" width="600"/>
+            <img src={"img territorios/Territorio 1.png"} width="600"/>
         </details>
         <details>
             <summary>Territorio 2</summary>
