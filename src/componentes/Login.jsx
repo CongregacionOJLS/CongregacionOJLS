@@ -36,7 +36,7 @@ const Login = () => {
                                 <input type = "text" placeholder="Ingresar Email" className='cajatexto' id='email'/>
                                 <input type="password" placeholder="Ingresar Contraseña" className='cajatexto' id='password'/>
                                 <button className="btnform">Iniciar sesion</button>
-                                <a href="https://congregacionojls.github.io/CongregacionOJLS/"><img className="atras" src="img territorios/atras.png" alt="" /></a>
+                                <a href="https://congregacionojls.github.io/"><img className="atras" src="img territorios/atras.png" alt="" /></a>
                             </form>
                         </div>
                     </div>
