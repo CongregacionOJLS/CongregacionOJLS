@@ -143,6 +143,12 @@ a:visited {
 
   .toggle-btn {
     display: block; /* Asegurarse de que el botón de toggle esté visible */
+    right: 10px; /* Mover el botón de toggle a la derecha */
+    top: 5px;
+  }
+
+  .toggle-btn img {
+    width: 50px;
   }
 
   .visibleContent {
