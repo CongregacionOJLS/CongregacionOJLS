@@ -278,9 +278,9 @@ a:visited {
   }
 
   .sidebar {
-    display: block; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
-    width: 100%;
-    font-size: xx-large;
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    font-size: xx-large !important;
   }
 
   .toggle-btn img {
