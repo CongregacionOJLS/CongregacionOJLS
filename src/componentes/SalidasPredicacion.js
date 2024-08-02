@@ -45,12 +45,12 @@ function SalidasPredicacion(props) {
     
             <div className={`content ${sidebarVisible ? 'visibleContent' : 'hiddenContent'}`}>
 
-            <br/>
+            <hr/>
             <h1>Salidas de predicación </h1>
-            <br/>
+            <hr/>
             <img className="imgSal" src={data[0]? data[0].url: ""}/>
             <br/>
-            <br/>
+            <hr/>
       </div>
     </div>
 

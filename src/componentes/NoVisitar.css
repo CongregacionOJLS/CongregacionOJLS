@@ -29,7 +29,7 @@ details {
 details summary {  
   font-weight: 400;
   font-size: 1.25rem;
-  padding: 1rem;
+  padding: 1rem 300px;
   cursor: pointer;
   list-style: none;
   outline: none;  /* Remove default outline */
@@ -98,6 +98,7 @@ details[open] summary::before {
   width: 197px; /* Ancho del sidebar */
   position: fixed;
   top: 0;
+  z-index: 999;
   left: 0;
   overflow-x: hidden;
   padding-top: 20px;
@@ -228,7 +229,7 @@ a:visited {
 
   details summary {
     font-size: 1rem;
-    padding: 0.75rem;
+    /*padding: 0.75rem;*/
   }
 
   details p {
