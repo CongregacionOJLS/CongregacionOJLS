@@ -212,6 +212,8 @@ a:visited {
 
 /* Media Queries para Adaptar a Dispositivos Móviles */
 
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
 @media (max-width: 768px) {
   /* FAQ Container */
   .faq-container {
@@ -230,7 +232,7 @@ a:visited {
 
   details summary {
     font-size: 1rem;
-    /*padding: 0.75rem;*/
+    padding: 0.75rem; /* Ajusta el padding para pantallas pequeñas */
   }
 
   details p {
