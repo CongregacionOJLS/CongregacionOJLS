@@ -5,6 +5,7 @@
   max-width: 800px;
   margin: 50px auto 0 auto;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .faq-container h2 {
