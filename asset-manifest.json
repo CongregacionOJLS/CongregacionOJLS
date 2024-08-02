@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/CongregacionOJLS/static/css/main.50918740.css",
+    "main.css": "/CongregacionOJLS/static/css/main.5025ca30.css",
     "main.js": "/CongregacionOJLS/static/js/main.b24b56b6.js",
     "static/media/HomeFinal.png": "/CongregacionOJLS/static/media/HomeFinal.aaaaa9b94f2eec4cd52f.png",
     "index.html": "/CongregacionOJLS/index.html",
-    "main.50918740.css.map": "/CongregacionOJLS/static/css/main.50918740.css.map",
+    "main.5025ca30.css.map": "/CongregacionOJLS/static/css/main.5025ca30.css.map",
     "main.b24b56b6.js.map": "/CongregacionOJLS/static/js/main.b24b56b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.50918740.css",
+    "static/css/main.5025ca30.css",
     "static/js/main.b24b56b6.js"
   ]
 }
