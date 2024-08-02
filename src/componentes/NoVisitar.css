@@ -238,9 +238,12 @@ a:visited {
   }
 
   .toggle-btn {
-    display: block; /* Mostrar el botón de toggle para pantallas pequeñas */
-    top: 15px; /* Ajustar la posición del botón */
-    right: 10px;
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+  
+  .toggle-btn img {
+    width: 50px !important;
   }
 
   #searchInput {
@@ -261,8 +264,9 @@ a:visited {
     padding: 10px;
   }
 
-  .toggle-btn img {
-    width: 50px; /* Ajustar el tamaño de la imagen del botón para pantallas pequeñas */
+  /* Ocultar detalles summary cuando el sidebar está visible */
+  .sidebar.visibleSideBar ~ .faq-container details summary {
+    display: none;
   }
 }
 
@@ -285,5 +289,10 @@ a:visited {
 
   .toggle-btn img {
     width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
+  }
+
+  /* Ocultar detalles summary cuando el sidebar está visible */
+  .sidebar.visibleSideBar ~ .faq-container details summary {
+    display: none;
   }
 }
