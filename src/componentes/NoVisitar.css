@@ -23,6 +23,7 @@ details {
   border: 1px solid #d8e0e9;
   color: #364f6b;
   position: relative;
+  overflow: hidden; /* Asegura que el contenido no sobrepase el contenedor */
 }
 
 details summary {  
@@ -32,6 +33,15 @@ details summary {
   cursor: pointer;
   list-style: none;
   outline: none;  /* Remove default outline */
+  transition: background-color 0.3s; /* Suaviza el cambio de color de fondo */
+}
+
+details summary::before {
+  position: absolute;
+  content: "👇";    
+  font-size: 1.75rem;
+  top: 10px;
+  right: 16px;  
 }
 
 details p {
@@ -52,14 +62,6 @@ details[open] {
 
 details[open] summary {
   font-weight: 600;
-}
-
-details summary::before {
-  position: absolute;
-  content: "👇";    
-  font-size: 1.75rem;
-  top: 10px;
-  right: 16px;  
 }
 
 details[open] summary::before {
@@ -100,6 +102,11 @@ details[open] summary::before {
   overflow-x: hidden;
   padding-top: 20px;
   display: block; /* Por defecto, el sidebar se muestra */
+}
+
+/* Estilos aplicados al sidebar visible */
+.sidebar.visibleSideBar ~ .faq-container details summary {
+  display: none; /* Ocultar summary cuando el sidebar está visible */
 }
 
 .sidebar ul {
