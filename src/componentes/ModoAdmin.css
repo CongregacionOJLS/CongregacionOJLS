@@ -156,3 +156,74 @@ button{
 }
 
 
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #Texto, #Horarios {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .ModoAdmin {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  footer {
+    padding: 10px !important; /* Aumentar el padding para dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+
+  img {
+    width: 90%;
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn {
+    display: block; /* Asegurarse de que el botón de toggle esté visible */
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  #Texto, #Horarios {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+
+  .ModoAdmin {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+}
