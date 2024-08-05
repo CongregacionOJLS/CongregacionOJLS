@@ -108,7 +108,7 @@ body{
 
 @media (max-width: 480px) {
   #imgAnun {
-    width: 100% !important;
+    width: 90% !important;
   }
 
   .sidebar {

@@ -133,7 +133,7 @@ a:visited {
 
 @media (max-width: 480px) {
   #imgVida {
-    width: 100% !important;
+    width: 90% !important;
   }
 
   .sidebar {
