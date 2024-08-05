@@ -55,7 +55,4 @@
         width: 100%; /* Botón ocupa el 100% del ancho del contenedor */
     }
 
-    .atras {
-        display: none; /* Ocultar el botón de atrás en pantallas muy pequeñas */
-    }
 }
