@@ -48,7 +48,7 @@ function Territorios(props) {
 <hr/>
 <h1>Territorio de la Congregación </h1>
 <hr/>
-<img src={data[0]? data[0].url: ""} width="600"/>
+<img id="imgTer" src={data[0]? data[0].url: ""}/>
 <br/>
 <br/>
 <h1>Territorio de edificios</h1>
