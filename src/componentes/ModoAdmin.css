@@ -155,3 +155,53 @@ button{
     }
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .visibleContent {
+      margin: 0;
+  }
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  min-width: 100%; /* Hacer el dropdown ocupar el ancho completo en pantallas pequeñas */
+}
+
+@media (max-width: 480px) {
+  .dropbtn {
+      font-size: 18px; /* Reducir el tamaño del botón */
+      padding: 10px;
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .dropdown-content {
+      min-width: 100%;
+  }
+
+  .toggle-btn {
+      top: 20px; /* Ajustar la posición del botón de toggle en pantallas pequeñas */
+      right: 20px;
+  }
+
+  .toggle-btn img {
+      width: 40px; /* Reducir el tamaño de la imagen del botón de toggle */
+  }
+
+  .content img {
+      max-width: 100%; /* Asegurarse de que las imágenes se ajusten en pantallas pequeñas */
+      height: auto;
+  }
+}
