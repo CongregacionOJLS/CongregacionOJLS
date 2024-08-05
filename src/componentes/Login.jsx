@@ -1,3 +1,4 @@
+import './Login.css';
 import {React, useState} from "react";
 
 import appFirebase from '../credenciales'
@@ -33,7 +34,7 @@ const Login = () => {
                     <div className="padre">
                         <div className="card card-body shadow-lg">
                             <form onSubmit={functAutenticacion}>
-                                <input type = "text" placeholder="Ingresar Email" className='cajatexto' id='email'/>
+                                <input type = "email" placeholder="Ingresar Email" className='cajatexto' id='email'/>
                                 <input type="password" placeholder="Ingresar Contraseña" className='cajatexto' id='password'/>
                                 <button className="btnform">Iniciar sesion</button>
                                 <a href="https://congregacionojls.github.io/CongregacionOJLS/"><img className="atras" src="img territorios/atras.png" alt="" /></a>
@@ -43,7 +44,7 @@ const Login = () => {
                 </div>   
 
                 <div className = "col-md-8">
-                    <img src="img territorios/Login3.png" alt="" className='tamaño-imagen' />
+                    <img id='imgLog' src="img territorios/Login3.png" alt="" className='tamaño-imagen' />
                 </div>
 
            </div>

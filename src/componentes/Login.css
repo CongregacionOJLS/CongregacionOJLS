@@ -1,0 +1,15 @@
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+
+    .content {
+        margin: 0; /* Ajustar el margen para pantallas pequeñas */
+    }
+}
+  
+@media (max-width: 480px) {
+    #imgLog {
+        display: none !important;
+    }
+}
+  
