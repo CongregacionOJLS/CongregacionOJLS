@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 
 function Inicio(props) {
 
-  const [sidebarVisible, setSidebarVisible] = useState(true);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const toggleSidebar = function(evento) {
     setSidebarVisible(!sidebarVisible);
@@ -39,8 +39,8 @@ function Inicio(props) {
           <br/>
             <h6> R E U N I O N E S :</h6>
             <br/>
-            <h6>V I E R N E S : 19:15</h6>
-            <h6>S A B A D O S : 18:30</h6>
+            <h6>M I E R C O L E S : 19:15</h6>
+            <h6>D O M I N G O S : 10:00</h6>
             <br/>
           </div>
         </footer>
