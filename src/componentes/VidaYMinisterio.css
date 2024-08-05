@@ -52,6 +52,10 @@ body {
   cursor: pointer;
 }
 
+img {
+  width: 600px;
+}
+
 .toggle-btn img {
   width: 60px; /* Ajusta el tamaño según necesites */
   height: auto; /* Esto mantiene la proporción de la imagen */
@@ -120,6 +124,11 @@ a:visited {
 }
 
 @media (max-width: 480px) {
+
+  img {
+    width: 90%;
+  }
+
   .sidebar {
     display: none; /* Ocultar el sidebar en pantallas muy pequeñas */
   }

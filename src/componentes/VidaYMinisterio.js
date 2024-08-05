@@ -48,7 +48,7 @@ function VidaYMinisterio(props) {
     <h1>Programa de la reunion vida y ministerio </h1>
     <hr/>
     <br/>
-    <img src={data[0]? data[0].url: ""} width="600"/>
+    <img src={data[0]? data[0].url: ""}/>
     </div>
     </div>
 
