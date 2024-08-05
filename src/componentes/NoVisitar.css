@@ -284,6 +284,11 @@ a:visited {
 }
 
 @media (max-width: 480px) {
+
+  details summary {  
+    padding: 1rem 9rem;
+  }
+  
   /* Asegura que el contenido se adapte bien en pantallas muy pequeñas */
   .faq-container {
     padding: 0.5rem;
