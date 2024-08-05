@@ -37,6 +37,10 @@ details summary {
   transition: background-color 0.3s; /* Suaviza el cambio de color de fondo */
 }
 
+details img {
+  width: 600px;
+}
+
 details summary::before {
   position: absolute;
   content: "👇";    

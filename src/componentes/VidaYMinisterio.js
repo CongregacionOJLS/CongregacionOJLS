@@ -31,7 +31,7 @@ function VidaYMinisterio(props) {
     fetchData();
   },[])
 
-  const [sidebarVisible, setSidebarVisible] = useState(true);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const toggleSidebar = function(evento) {
     setSidebarVisible(!sidebarVisible);

@@ -43,7 +43,7 @@ function Formulario(props) {
     }
   };
 
-  const [sidebarVisible, setSidebarVisible] = useState(true);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
   const [selectedTerritory, setSelectedTerritory] = useState(null);
   const [checkedTerritories, setCheckedTerritories] = useState([]);
 
