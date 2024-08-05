@@ -194,10 +194,6 @@ button{
 
 @media (max-width: 480px) {
 
-  img {
-    width: 90%;
-  }
-
   .sidebar {
     display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
     width: 100% !important;
