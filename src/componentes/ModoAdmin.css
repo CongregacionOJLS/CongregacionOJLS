@@ -163,22 +163,10 @@ button{
     position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
     display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
   }
-
-  .visibleContent {
-      margin: 0;
-  }
 }
 
-/* Dropdown Menu */
-.dropdown-content {
-  min-width: 100%; /* Hacer el dropdown ocupar el ancho completo en pantallas pequeñas */
-}
 
 @media (max-width: 480px) {
-  .dropbtn {
-      font-size: 18px; /* Reducir el tamaño del botón */
-      padding: 10px;
-  }
 
   .sidebar {
     display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
@@ -187,17 +175,14 @@ button{
     font-size: xx-large !important;
   }
 
-  .dropdown-content {
-      min-width: 100%;
-  }
 
   .toggle-btn {
-      top: 20px; /* Ajustar la posición del botón de toggle en pantallas pequeñas */
-      right: 20px;
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
   }
-
+  
   .toggle-btn img {
-      width: 40px; /* Reducir el tamaño de la imagen del botón de toggle */
+    width: 50px !important;
   }
 
   .content img {
