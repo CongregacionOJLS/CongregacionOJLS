@@ -20,6 +20,8 @@ body {
   padding-top: 20px;
   display: block; /* Por defecto, el sidebar se muestra */
   transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+  font-family: "Fugaz One";
+  font-size: x-large;
 }
 
 .sidebar ul {
@@ -52,13 +54,25 @@ body {
   cursor: pointer;
 }
 
-.imgVida {
-  width: 600px;
-}
-
 .toggle-btn img {
   width: 60px; /* Ajusta el tamaño según necesites */
   height: auto; /* Esto mantiene la proporción de la imagen */
+}
+
+#imgVida {
+  width: 600px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+.content {
+  margin: 0 0 0 200px; /* Ajuste de margen según la visibilidad del sidebar */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
 }
 
 .notification {
@@ -69,7 +83,6 @@ body {
   font-size: 20px;
   background: white;
   text-align: center;
-  /* Añadir nuevas propiedades para centrar */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -83,15 +96,8 @@ a:visited {
   color: rgb(255, 253, 253); /* Cambia el color del enlace visitado a púrpura */
 }
 
-.visibleContent {
-  margin: 0 0 0 200px;
-}
+/* Media Queries para Adaptar a Dispositivos Móviles */
 
-.hiddenContent {
-  margin: 0 auto;
-}
-
-/* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
   .sidebar {
     width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
@@ -101,36 +107,33 @@ a:visited {
     display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
   }
 
-  .visibleContent {
-    margin: 0 !important; /* Ajustar el margen para el contenido visible */
-  }
-
   .toggle-btn {
     right: 10px !important; /* Mover el botón de toggle a la derecha */
     top: 5px !important;
   }
-
+  
   .toggle-btn img {
     width: 50px !important;
   }
 
-  #Texto, #Horarios {
-    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  #searchInput {
+    width: 100%; /* Hacer el input de búsqueda ocupar todo el ancho disponible */
+    margin-bottom: 10px;
   }
 
-  .VidaYMinisterio {
-    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  .content {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
   }
 
-  footer {
-    padding: 10px !important; /* Aumentar el padding para dispositivos móviles */
+  .notification {
+    font-size: 18px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
-
-  .imgVida {
-    width: 90%;
+  #imgVida {
+    width: 100% !important;
   }
 
   .sidebar {
@@ -140,25 +143,7 @@ a:visited {
     font-size: xx-large !important;
   }
 
-  .toggle-btn {
-    display: block; /* Asegurarse de que el botón de toggle esté visible */
-    right: 10px !important; /* Mover el botón de toggle a la derecha */
-    top: 5px !important;
-  }
-
   .toggle-btn img {
-    width: 50px !important;
-  }
-
-  .visibleContent {
-    margin: 0 !important; /* Ajustar el margen para el contenido visible */
-  }
-
-  #Texto, #Horarios {
-    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
-  }
-
-  .NoVisitar {
-    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+    width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
   }
 }
