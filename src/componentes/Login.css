@@ -23,7 +23,7 @@
 
     .card {
         width: 100%; /* Ajustar el ancho para que ocupe el 100% del contenedor */
-        max-width: 300px; /* Máximo ancho para el card */
+        max-width: 350px; /* Máximo ancho para el card */
     }
 
     #imgLog {
@@ -43,7 +43,7 @@
 
     .card {
         width: 90%; /* Ajustar el ancho del card para pantallas muy pequeñas */
-        max-width: 300px; /* Máximo ancho para el card */
+        max-width: 350px; /* Máximo ancho para el card */
         text-align: center; /* Alinear el texto al centro */
     }
 
