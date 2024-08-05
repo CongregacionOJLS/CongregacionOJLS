@@ -176,17 +176,4 @@ button{
   }
 
 
-  .toggle-btn {
-    right: 10px !important; /* Mover el botón de toggle a la derecha */
-    top: 5px !important;
-  }
-  
-  .toggle-btn img {
-    width: 50px !important;
-  }
-
-  .content img {
-      max-width: 100%; /* Asegurarse de que las imágenes se ajusten en pantallas pequeñas */
-      height: auto;
-  }
 }
