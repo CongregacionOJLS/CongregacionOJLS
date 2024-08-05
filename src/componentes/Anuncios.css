@@ -8,6 +8,10 @@ body{
     text-align: center;
 }
 
+#imgAnun{
+  width: 600px;
+}
+
 .sidebar {
     background-color: #beb49e; /* Color de fondo del sidebar */
     height: 100vh;
@@ -66,3 +70,55 @@ body{
   .hiddenContent {
     margin: 0 auto;
   }
+
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+  
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #searchInput {
+    width: 100%; /* Hacer el input de búsqueda ocupar todo el ancho disponible */
+    margin-bottom: 10px;
+  }
+
+  .content {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .notification {
+    font-size: 18px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #imgAnun {
+    width: 100% !important;
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn img {
+    width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
+  }
+}
