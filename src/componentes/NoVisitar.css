@@ -288,6 +288,9 @@ a:visited {
   details summary {  
     padding: 1rem 9rem !important;
   }
+  details img {
+    width: 100%;
+  }
   
   /* Asegura que el contenido se adapte bien en pantallas muy pequeñas */
   .faq-container {
