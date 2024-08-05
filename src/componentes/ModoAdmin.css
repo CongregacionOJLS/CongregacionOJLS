@@ -162,6 +162,28 @@ button{
     height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
     display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
   }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  .dropdown-content {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  #imgUpl {
+    max-width: 300px;
+  }
+
 }
 
 
@@ -174,5 +196,26 @@ button{
     font-size: xx-large !important;
   }
 
+  .toggle-btn {
+    display: block; /* Asegurarse de que el botón de toggle esté visible */
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  #dropdown-content {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+
+  #imgUpl {
+    max-width: 300px;
+  }
 
 }

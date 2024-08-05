@@ -188,7 +188,7 @@ function ModoAdmin(props) {
               onChange={(e) => setFile(e.target.files[0])}
             />
           </form>
-          <img src={file ? URL.createObjectURL(file) : ''} /> <br/>
+          <img id='imgUpl' src={file ? URL.createObjectURL(file) : ''} /> <br/>
           <button disabled={per == null && per<100} onClick={handleAdd}>Enviar</button>
 
         </div>

@@ -110,7 +110,10 @@ a:visited {
 
 @media (max-width: 768px){
   .sidebar{
-    width: 100px !important; /* Reducir el ancho del sidebar */
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
   }
 
   .visibleContent {
@@ -141,7 +144,10 @@ a:visited {
 
 @media (max-width: 480px) {
   .sidebar {
-    display: none; /* Ocultar el sidebar en pantallas muy pequeñas */
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
   }
 
   .toggle-btn {
