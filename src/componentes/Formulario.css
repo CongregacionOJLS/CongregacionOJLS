@@ -82,14 +82,14 @@
 }
 
 .form-section {
-  width: 100%;
+  width: 50%;
   padding: 10px;
-  position: static; /* Cambiado a static para móvil */
-  margin-left: 0; /* Eliminado margen izquierdo para móvil */
+  position: fixed;
+  margin-left: 80px; /* Añadir margen izquierdo para separar del scrollable-content */
 }
 
 .territory-item {
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   margin-bottom: 10px;
   flex-direction: column; /* Ajuste de dirección para móvil */
@@ -159,6 +159,13 @@
   .form-section {
     width: 100%;
     padding: 5px; /* Reducido el relleno */
+    position: static; /* Cambiado a static para móvil */
+    margin-left: 0; /* Eliminado margen izquierdo para móvil */
+  }
+  .form-section {
+    width: 100%;
+    position: static; /* Cambiado a static para móvil */
+    margin-left: 0; /* Eliminado margen izquierdo para móvil */
   }
 
   .territory-item {
