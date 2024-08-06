@@ -8,7 +8,11 @@
         height: 100vh; /* Ocupa toda la altura de la ventana */
         margin: 0; /* Ajustar el margen para pantallas pequeñas */
     }
-
+    
+    #file {
+        width: 100%;
+        text-wrap: pretty;
+    }
     .row {
         flex-direction: column; /* Cambiar la dirección a columna para pantallas pequeñas */
         align-items: center; /* Centrar los elementos horizontalmente */
@@ -39,6 +43,11 @@
         align-items: center;
         height: 100vh; /* Ocupa toda la altura de la ventana */
         margin: 0; /* Ajustar el margen para pantallas pequeñas */
+    }
+
+    #file {
+        width: 100%;
+        text-wrap: pretty;
     }
 
     .card {
