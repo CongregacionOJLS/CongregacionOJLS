@@ -112,7 +112,7 @@ function Formulario(props) {
                   <br/>
                   <input type="date" id="date" name="UltimaVezRealizado" value={data.UltimaVezRealizado} onChange={handleChange}/>
                 </div>
-                <div>
+                <div id='subDiv'>
                   <label htmlFor="submit"></label>
                   <br/>
                   <input type="submit" id="submit" name="submit"/>

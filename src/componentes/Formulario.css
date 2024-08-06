@@ -86,6 +86,7 @@
   padding: 10px;
   position: fixed;
   margin-left: 80px; /* Añadir margen izquierdo para separar del scrollable-content */
+  display: flex;
 }
 
 .territory-item {
@@ -134,6 +135,11 @@
 
 /* Consultas de medios para ajustar el diseño en pantallas pequeñas */
 @media (max-width: 768px) {
+
+  #subDiv {
+    margin-bottom: 60px;
+  }
+
 
   .sidebar {
     width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
