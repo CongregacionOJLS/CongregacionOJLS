@@ -49,7 +49,7 @@ function Anuncios(props) {
         <div id='PLACEHOLDER'>
           {data.map((item, index) => (
             <div key={index}>
-              <img id="imgAnun" src={item.url} alt={`Anuncio ${index + 1}`} />
+              <img id="imgAnun" src={item.url} alt={<a target='_blank' href={item.url}>{`Anuncio ${index + 1}`}</a>}/>
               <br />
               <br />
             </div>
