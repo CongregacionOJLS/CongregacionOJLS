@@ -8,7 +8,7 @@ body{
     text-align: center;
 }
 
-#imgAnun{
+.imgAnun{
   width: 600px;
 }
 
@@ -107,7 +107,7 @@ body{
 }
 
 @media (max-width: 480px) {
-  #imgAnun {
+  .imgAnun {
     width: 90% !important;
   }
 
