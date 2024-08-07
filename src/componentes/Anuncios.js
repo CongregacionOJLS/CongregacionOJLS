@@ -13,7 +13,6 @@ function Anuncios(props) {
     const fetchData = async () => {
       let list = [];
       try {
-        // Crear una consulta ordenada por timeStamp en orden descendente
         const q = query(collection(db, "Anuncios"), orderBy("timeStamp", "desc"));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
@@ -30,7 +29,7 @@ function Anuncios(props) {
 
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
-  const toggleSidebar = function(evento) {
+  const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
   };
 
@@ -49,7 +48,13 @@ function Anuncios(props) {
         <div id='PLACEHOLDER'>
           {data.map((item, index) => (
             <div key={index}>
-              <img id="imgAnun" src={item.url} alt={<a target='_blank' href={item.url}>{`Anuncio ${index + 1}`}</a>}/>
+              {item.url.endsWith('.pdf') ? (
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  <img src="path/to/pdf-icon.png" alt={`Anuncio ${index + 1}`} /> {/* Asegúrate de tener un ícono de PDF */}
+                </a>
+              ) : (
+                <img id="imgAnun" src={item.url} alt={`Anuncio ${index + 1}`} />
+              )}
               <br />
               <br />
             </div>
