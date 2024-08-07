@@ -12,6 +12,10 @@ body{
   width: 600px;
 }
 
+.pdfAnun {
+  width: 150px;
+}
+
 .sidebar {
     background-color: #beb49e; /* Color de fondo del sidebar */
     height: 100vh;
@@ -108,6 +112,10 @@ body{
 
 @media (max-width: 480px) {
   .imgAnun {
+    width: 90% !important;
+  }
+
+  .pdfAnun {
     width: 90% !important;
   }
 
