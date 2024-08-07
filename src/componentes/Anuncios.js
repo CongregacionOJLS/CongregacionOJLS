@@ -52,7 +52,7 @@ function Anuncios(props) {
             <div key={index}>
               {isPDF(item.url) ? (
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  <img src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} /> {/* Asegúrate de tener un ícono de PDF */}
+                  <img width={'50px'} src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} /> {/* Asegúrate de tener un ícono de PDF */}
                 </a>
               ) : (
                 <img id="imgAnun" src={item.url} alt={`Anuncio ${index + 1}`} />
