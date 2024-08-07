@@ -6,6 +6,8 @@ import appFirebase from '../credenciales';
 
 const db = getFirestore(appFirebase);
 
+const isPDF = (url) => /.*\.pdf(\?.*)?$/.test(url);
+
 function Anuncios(props) {
   const [data, setData] = useState([]);
 
@@ -48,7 +50,7 @@ function Anuncios(props) {
         <div id='PLACEHOLDER'>
           {data.map((item, index) => (
             <div key={index}>
-              {item.url.endsWith('.pdf') ? (
+              {isPDF(item.url) ? (
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <img src="path/to/pdf-icon.png" alt={`Anuncio ${index + 1}`} /> {/* Asegúrate de tener un ícono de PDF */}
                 </a>
