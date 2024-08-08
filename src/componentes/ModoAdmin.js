@@ -184,7 +184,7 @@ function ModoAdmin(props) {
             />
           </form>
           <img width='600px' id='imgUpl' src={file ? URL.createObjectURL(file) : ''} /> <br/>
-          <button disabled={per == null && per<100} onClick={handleAdd}>Enviar</button>
+          <button disabled={per == null || per<100} onClick={handleAdd}>Enviar</button>
 
         </div>
       </div>
