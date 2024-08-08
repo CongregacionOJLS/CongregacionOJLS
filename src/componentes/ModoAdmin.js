@@ -31,6 +31,7 @@ var nombreImagen;
 var tabla;
 
 var modificando = "...";
+var enviando = false;
 
 function ModoAdmin(props) {
   const [file, setFile] = useState(null);
@@ -113,6 +114,7 @@ function ModoAdmin(props) {
   const handleAdd = async (e) => {
     e.preventDefault();
     console.log(db);
+    enviando = true;
     try {
       if (tabla == "Anuncios")
       {
@@ -136,6 +138,9 @@ function ModoAdmin(props) {
       }
     } catch (error) {
       console.error('Error al añadir el documento: ', error);
+    }
+    finally {
+      enviando = false;
     }
   };
 
@@ -184,7 +189,7 @@ function ModoAdmin(props) {
             />
           </form>
           <img width='600px' id='imgUpl' src={file ? URL.createObjectURL(file) : ''} /> <br/>
-          <button disabled={per == null || per<100} onClick={handleAdd}>Enviar</button>
+          <button disabled={per == null || per<100 || enviando == true} onClick={handleAdd}>Enviar</button>
 
         </div>
       </div>
