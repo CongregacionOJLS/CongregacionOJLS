@@ -56,10 +56,7 @@ function Anuncios(props) {
                   <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} />
                 </a>
               ) : isVideo(item.url) ? (
-                <video className="imgAnun" controls>
-                  <source src={item.url} type={`video/${item.url.split('.').pop()}`} />
-                  Your browser does not support the video tag.
-                </video>
+                <video className="imgAnun" controls src={item.url}></video>
               ) : (
                 <img className="imgAnun" src={item.url} alt={`Anuncio ${index + 1}`} />
               )}

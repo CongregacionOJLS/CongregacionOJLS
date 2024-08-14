@@ -104,6 +104,7 @@ function ModoAdmin(props) {
       {
         fileName = nombreImagen;
       }
+      console.log(fileName);
       /*var fileName = nombreImagen.includes("Anuncios")
         ? `${nombreImagen.replace(".png", `.${fileExtension}`)}`
         : nombreImagen; */
