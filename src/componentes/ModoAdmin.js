@@ -69,7 +69,7 @@ function ModoAdmin(props) {
       case "Anuncios":
         const date = new Date();
         tabla = "Anuncios";
-        nombreImagen = "images/Anuncios" + ": " + date.getDay() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
+        nombreImagen = "images/Anuncios" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Anuncios";
         break;
       case "VidaYMinisterio":
