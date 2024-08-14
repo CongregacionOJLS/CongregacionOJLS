@@ -93,6 +93,10 @@ function Sidebar({ visible, usuario }) {
         <hr />
         <li><a href="VidaYMinisterio">VIDA Y MINISTERIO</a></li>
         <hr />
+        <li><a href="Carritos">CARRITOS</a></li>
+        <hr />
+        <li><a href="Acomodadores">ACOMODADORES</a></li>
+        <hr />
         <li><a href="Anuncios">ANUNCIOS</a></li>
         <hr />
         {usuario && (

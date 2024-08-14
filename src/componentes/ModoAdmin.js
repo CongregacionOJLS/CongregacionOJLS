@@ -61,6 +61,11 @@ function ModoAdmin(props) {
         nombreImagen = "images/Territorios.png";
         modificando = "Territorios";
         break;
+      case "Edificios":
+        tabla = "Edificios";  
+        nombreImagen = "images/Edificios.png";
+        modificando = "Edificios";
+        break;
       case "Anuncios":
         const date = new Date();
         tabla = "Anuncios";
@@ -72,6 +77,16 @@ function ModoAdmin(props) {
         nombreImagen = "images/VidaYMinisterio.png";  
         modificando = "Vida y ministerio";
         break;
+      case "Carritos":
+        tabla = "Carritos";
+        nombreImagen = "images/Carritos.png";  
+        modificando = "Carritos";
+        break;
+      case "Acomodadores":
+        tabla = "Acomodadores";
+        nombreImagen = "images/Acomodadores.png";  
+        modificando = "Acomodadores";
+        break;
     }
     console.log(option);
     handleClose(); // Cierra el menú después de seleccionar una opción
@@ -80,10 +95,19 @@ function ModoAdmin(props) {
   useEffect(() => {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
-      const fileName = nombreImagen.includes("Anuncios")
+      let fileName = null;
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores"))
+      {
+        fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
+      }
+      else 
+      {
+        fileName = nombreImagen;
+      }
+      /*var fileName = nombreImagen.includes("Anuncios")
         ? `${nombreImagen.replace(".png", `.${fileExtension}`)}`
-        : nombreImagen;
-  
+        : nombreImagen; */
+
       const storageRef = ref(storage, fileName);
       const uploadTask = uploadBytesResumable(storageRef, file);
   
@@ -172,8 +196,11 @@ function ModoAdmin(props) {
               <div className="dropdown-content">
                 <a href="#" onClick={() => handleMenuItemClick('SalidasDePredicacion')}>Salidas de predicacion</a>
                 <a href="#" onClick={() => handleMenuItemClick('Territorios')}>Territorios</a>
+                <a href="#" onClick={() => handleMenuItemClick('Edificios')}>Edificios</a>
                 <a href="#" onClick={() => handleMenuItemClick('Anuncios')}>Anuncios</a>
                 <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterio')}>Vida y ministerio</a>
+                <a href="#" onClick={() => handleMenuItemClick('Carritos')}>Carritos</a>
+                <a href="#" onClick={() => handleMenuItemClick('Acomodadores')}>Acomodadores</a>
               </div>
             )}
           </div>
@@ -184,7 +211,7 @@ function ModoAdmin(props) {
             <input
               type="file"
               id="file"
-              accept=".png,.jpg,.jpeg,.pdf"  // Agrega los tipos de archivo permitidos
+              accept=".png,.jpg,.jpeg,.pdf,.mp4,.avi,.mov"  // Agrega los tipos de archivo permitidos
               onChange={(e) => setFile(e.target.files[0])}
             />
           </form>

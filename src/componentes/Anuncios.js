@@ -7,6 +7,7 @@ import appFirebase from '../credenciales';
 const db = getFirestore(appFirebase);
 
 const isPDF = (url) => /.*\.pdf(\?.*)?$/.test(url);
+const isVideo = (url) => /.*\.(mp4|avi|mov)(\?.*)?$/.test(url);
 
 function Anuncios(props) {
   const [data, setData] = useState([]);
@@ -52,8 +53,13 @@ function Anuncios(props) {
             <div key={index}>
               {isPDF(item.url) ? (
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} /> {/* Asegúrate de tener un ícono de PDF */}
+                  <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} />
                 </a>
+              ) : isVideo(item.url) ? (
+                <video className="imgAnun" controls>
+                  <source src={item.url} type={`video/${item.url.split('.').pop()}`} />
+                  Your browser does not support the video tag.
+                </video>
               ) : (
                 <img className="imgAnun" src={item.url} alt={`Anuncio ${index + 1}`} />
               )}

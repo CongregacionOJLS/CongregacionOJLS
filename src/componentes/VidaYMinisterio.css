@@ -24,6 +24,10 @@ body {
   font-size: x-large;
 }
 
+.pdfAnun {
+  width: 150px;
+}
+
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -134,6 +138,10 @@ a:visited {
 @media (max-width: 480px) {
   #imgVida {
     width: 90% !important;
+  }
+
+  .pdfAnun {
+    width: 30% !important;
   }
 
   .sidebar {

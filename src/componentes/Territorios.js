@@ -16,12 +16,18 @@ function Territorios(props) {
       let list = [];
       try
       {
-    const querySnapshot = await getDocs(collection(db,"Territorios"));
-    querySnapshot.forEach((doc) => {
-      list.push({id: doc.id,...doc.data()});
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
+        const querySnapshot = await getDocs(collection(db,"Territorios"));
+        const querySnapshot2 = await getDocs(collection(db,"Edificios"));
+        querySnapshot.forEach((doc) => {
+          list.push({id: doc.id,...doc.data()});
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
     });
+      querySnapshot2.forEach((doc) => {
+        list.push({id: doc.id,...doc.data()});
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+  });
     setData(list);
   }catch(err)
   {
@@ -50,6 +56,11 @@ function Territorios(props) {
 <hr/>
 <img id="imgTer" src={data[0]? data[0].url: ""}/>
 <br/>
+<br/>
+<h2>Territorio Edificios</h2>
+<hr/>
+<img id="imgTer" src={data[1]? data[1].url: ""}/>
+<hr/>
 <br/>
 </div>
 </div>
