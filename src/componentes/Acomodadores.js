@@ -50,13 +50,13 @@ function Acomodadores(props) {
     <h1>Acomodadores</h1>
     <hr/>
     <br/>
-    {isPDF(data[0].url) ? (
+    {data[0]? isPDF(data[0].url) ? (
       <a href={data[0]? data[0].url : ""} target="_blank" rel="noopener noreferrer">
         <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={'Acom'} /> {/* Asegúrate de tener un ícono de PDF */}
       </a>
       ) : (
       <img className="imgVida" src={data[0]? data[0].url : ""} alt={'Acom'} />
-              )}
+              ) : "" }
     <br/>
     <br/>
     </div>
