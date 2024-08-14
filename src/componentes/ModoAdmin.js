@@ -104,6 +104,7 @@ function ModoAdmin(props) {
       {
         fileName = nombreImagen;
       }
+      nombreImagen = fileName; //PUEDE ROMPER TODO????
       console.log(fileName);
       /*var fileName = nombreImagen.includes("Anuncios")
         ? `${nombreImagen.replace(".png", `.${fileExtension}`)}`
