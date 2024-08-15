@@ -20,7 +20,6 @@ import {getAuth, onAuthStateChanged} from 'firebase/auth'
 const auth = getAuth(appFirebase)
 
 function App() {
-  console.log(appFirebase);
   const [usuario, setUsuario] = useState(null)
   onAuthStateChanged(auth,(usuarioFirebase)=>{
     if(usuarioFirebase){

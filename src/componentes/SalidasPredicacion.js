@@ -36,7 +36,6 @@ function SalidasPredicacion(props) {
     const toggleSidebar = function(evento) {
       setSidebarVisible(!sidebarVisible);
     };
-    console.log(data[0]);
     return (
         <div className="SalidasPredicacion">
             <Sidebar visible={sidebarVisible} usuario = {props.usuario}/>
