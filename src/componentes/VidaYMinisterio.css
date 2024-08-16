@@ -67,6 +67,10 @@ body {
   width: 600px; /* Ajusta el tamaño de la imagen según sea necesario */
 }
 
+a {
+  text-decoration: none;
+}
+
 #pdfText {
   color: rosybrown;
   text-decoration: none;

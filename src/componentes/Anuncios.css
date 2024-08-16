@@ -64,7 +64,11 @@ body{
     width: 60px; /* ajusta el tamaño según necesites */
     height: auto; /* esto mantiene la proporción de la imagen */
   }
-  
+
+  a {
+    text-decoration: none;
+  }
+
   #pdfText {
     color: rosybrown;
     text-decoration: none;
