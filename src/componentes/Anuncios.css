@@ -65,11 +65,11 @@ body{
     height: auto; /* esto mantiene la proporción de la imagen */
   }
   
-  .pdfText {
+  #pdfText {
     color: rosybrown;
     text-decoration: none;
   }
-  .pdfText:visited {
+  #pdfText:visited {
     color:rosybrown;
     text-decoration: none;
   }

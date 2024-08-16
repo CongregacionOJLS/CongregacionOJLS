@@ -67,11 +67,11 @@ body {
   width: 600px; /* Ajusta el tamaño de la imagen según sea necesario */
 }
 
-.pdfText {
+#pdfText {
   color: rosybrown;
   text-decoration: none;
 }
-.pdfText:visited {
+#pdfText:visited {
   color:rosybrown;
   text-decoration: none;
 }

@@ -12,11 +12,11 @@ body {
     text-align: center;
   }
   
-  .pdfText {
+  #pdfText {
     color: rosybrown;
     text-decoration: none;
   }
-  .pdfText:visited {
+  #pdfText:visited {
     color:rosybrown;
     text-decoration: none;
   }
