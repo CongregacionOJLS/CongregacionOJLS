@@ -67,6 +67,16 @@ body {
   width: 600px; /* Ajusta el tamaño de la imagen según sea necesario */
 }
 
+.pdfText {
+  color: rosybrown;
+  text-decoration: none;
+}
+.pdfText:visited {
+  color:rosybrown;
+  text-decoration: none;
+}
+
+
 .content {
   margin: 0 0 0 200px; /* Ajuste de margen según la visibilidad del sidebar */
 }

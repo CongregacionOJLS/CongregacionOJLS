@@ -84,7 +84,7 @@ function ModoAdmin(props) {
         break;
       case "Acomodadores":
         tabla = "Acomodadores";
-        nombreImagen = "images/Acomodadores.png";  
+        nombreImagen = "images/Acomodadores" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Acomodadores";
         break;
     }

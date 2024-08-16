@@ -53,6 +53,7 @@ function Acomodadores(props) {
     {data[0]? isPDF(data[0].url) ? (
       <a href={data[0]? data[0].url : ""} target="_blank" rel="noopener noreferrer">
         <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={'Acom'} /> {/* Asegúrate de tener un ícono de PDF */}
+        <h3 id='pdfText'>{data[0].name}</h3>
       </a>
       ) : (
       <img className="imgVida" src={data[0]? data[0].url : ""} alt={'Acom'} />

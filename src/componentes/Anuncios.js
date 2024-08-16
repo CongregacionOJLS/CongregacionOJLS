@@ -54,6 +54,7 @@ function Anuncios(props) {
               {isPDF(item.url) ? (
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} />
+                  <h3 id='pdfText'>{item.name}</h3>
                 </a>
               ) : isVideo(item.url) ? (
                 <video className="imgAnun" controls src={item.url}></video>

@@ -66,7 +66,15 @@ body{
     height: auto; /* esto mantiene la proporción de la imagen */
   }
   
-  
+  .pdfText {
+    color: rosybrown;
+    text-decoration: none;
+  }
+  .pdfText:visited {
+    color:rosybrown;
+    text-decoration: none;
+  }
+
   .visibleContent {
     margin: 0 0 0 200px;
   }
