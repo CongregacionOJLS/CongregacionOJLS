@@ -83,6 +83,7 @@ function ModoAdmin(props) {
         modificando = "Carritos";
         break;
       case "Acomodadores":
+        const date2 = new Date();
         tabla = "Acomodadores";
         nombreImagen = "images/Acomodadores" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Acomodadores";
