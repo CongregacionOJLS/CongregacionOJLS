@@ -12,6 +12,15 @@ body {
     text-align: center;
   }
   
+  .pdfText {
+    color: rosybrown;
+    text-decoration: none;
+  }
+  .pdfText:visited {
+    color:rosybrown;
+    text-decoration: none;
+  }
+
   #Texto {
     font-family: "Paytone One";
     font-size: large;
