@@ -155,14 +155,27 @@ function ModoAdmin(props) {
       }
       else 
       {
-        await setDoc(doc(db, tabla, 'imagen'), {
-          name: tabla,
-          url: rutaImagen, // Asegúrate de tener la URL correcta aquí
-          timeStamp: serverTimestamp(),
-        });
-        console.log('Documento añadido con éxito');
-        alert("Documento añadido con éxito");
-      }
+        if (tabla == "Acomodadores")
+        {
+          await setDoc(doc(db, tabla, 'imagen'), {
+            name: nombreImagen,
+            url: rutaImagen, // Asegúrate de tener la URL correcta aquí
+            timeStamp: serverTimestamp(),
+          });
+          console.log('Documento añadido con éxito');
+          alert("Documento añadido con éxito");
+        }
+        else
+        {
+          await setDoc(doc(db, tabla, 'imagen'), {
+            name: tabla,
+            url: rutaImagen, // Asegúrate de tener la URL correcta aquí
+            timeStamp: serverTimestamp(),
+          });
+          console.log('Documento añadido con éxito');
+          alert("Documento añadido con éxito");
+        }
+    }
     } catch (error) {
       console.error('Error al añadir el documento: ', error);
     }
