@@ -157,6 +157,7 @@ function ModoAdmin(props) {
       {
         if (tabla == "Acomodadores")
         {
+          nombreImagen = nombreImagen.split("/")[1];
           await setDoc(doc(db, tabla, 'imagen'), {
             name: nombreImagen,
             url: rutaImagen, // Asegúrate de tener la URL correcta aquí
