@@ -103,15 +103,9 @@ function ModoAdmin(props) {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
       let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores"))
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores") || nombreImagen.includes("Conferencias"))
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
-      }
-      else if ("Conferencias")
-      {
-        const date3 = new Date();
-        fileName = "images/" + file.name.split('.').pop()[0] + ": " + date3.getDate() + "-" + (date3.getMonth() + 1) + "-" + date3.getFullYear() + ":" + date3.getHours() + ":" + date3.getMinutes() + ".png";
-        fileName = `${fileName.replace(".png", `.${fileExtension}`)}`;        
       }
       else 
       {
