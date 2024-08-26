@@ -103,7 +103,7 @@ function ModoAdmin(props) {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
       let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores") || nombreImagen.includes("Conferencias"))
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores"))
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
       }
