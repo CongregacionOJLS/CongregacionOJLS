@@ -97,6 +97,8 @@ function Sidebar({ visible, usuario }) {
         <hr />
         <li><a href="Acomodadores">ACOMODADORES</a></li>
         <hr />
+        <li><a href="Conferencias">CONFERENCIAS</a></li>
+        <hr/>
         <li><a href="Anuncios">ANUNCIOS</a></li>
         <hr />
         {usuario && (

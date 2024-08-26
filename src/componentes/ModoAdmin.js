@@ -88,6 +88,12 @@ function ModoAdmin(props) {
         nombreImagen = "images/Acomodadores" + ": " + date2.getDate() + "-" + (date2.getMonth() + 1) + "-" + date2.getFullYear() + ":" + date2.getHours() + ":" + date2.getMinutes() + ".png";  
         modificando = "Acomodadores";
         break;
+        case "Conferencias":
+          const date3 = new Date();
+          tabla = "Conferencias";
+          nombreImagen = "images/Conferencias" + ": " + date3.getDate() + "-" + (date3.getMonth() + 1) + "-" + date3.getFullYear() + ":" + date3.getHours() + ":" + date3.getMinutes() + ".png";  
+          modificando = "Conferencias";
+          break;
     }
     console.log(option);
     handleClose(); // Cierra el menú después de seleccionar una opción
@@ -97,7 +103,7 @@ function ModoAdmin(props) {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
       let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores"))
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores") || nombreImagen.includes("Conferencias"))
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
       }
@@ -145,6 +151,7 @@ function ModoAdmin(props) {
     try {
       if (tabla == "Anuncios")
       {
+        nombreImagen = nombreImagen.split("/")[1]; // EXPERIMENTAL
         await addDoc(collection(db, tabla,), { // addDoc(collection(db, "cities")
           name: nombreImagen,
           url: rutaImagen, // Asegúrate de tener la URL correcta aquí
@@ -155,7 +162,7 @@ function ModoAdmin(props) {
       }
       else 
       {
-        if (tabla == "Acomodadores")
+        if (tabla == "Acomodadores" || tabla == "Conferencias")
         {
           nombreImagen = nombreImagen.split("/")[1];
           await setDoc(doc(db, tabla, 'imagen'), {
@@ -218,6 +225,7 @@ function ModoAdmin(props) {
                 <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterio')}>Vida y ministerio</a>
                 <a href="#" onClick={() => handleMenuItemClick('Carritos')}>Carritos</a>
                 <a href="#" onClick={() => handleMenuItemClick('Acomodadores')}>Acomodadores</a>
+                <a href="#" onClick={() => handleMenuItemClick('Conferencias')}>Conferencias</a>
               </div>
             )}
           </div>

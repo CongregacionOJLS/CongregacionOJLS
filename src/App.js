@@ -12,9 +12,11 @@ import ModoAdmin from './componentes/ModoAdmin';
 import Formulario from './componentes/Formulario';
 import Carritos from './componentes/Carritos';
 import Acomodadores from './componentes/Acomodadores';
+import Conferencias from './componentes/Conferencias';
 
 import appFirebase from './credenciales';
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
+
 
 
 const auth = getAuth(appFirebase)
@@ -47,6 +49,8 @@ function App() {
         <Route path="/Carritos" element={<Carritos usuario={usuario}/>}>
         </Route>
         <Route path="/Acomodadores" element={<Acomodadores usuario={usuario}/>}>
+        </Route>
+        <Route path="/Conferencias" element={<Conferencias usuario={usuario}/>}>
         </Route>
         <Route path="/SalidasPredicacion" element={<SalidasPredicacion usuario={usuario}/>}>
         </Route>
