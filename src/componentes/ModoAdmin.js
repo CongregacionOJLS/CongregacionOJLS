@@ -107,6 +107,12 @@ function ModoAdmin(props) {
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
       }
+      else if ("Conferencias")
+      {
+        const date3 = new Date();
+        fileName = "images/" + file.name.split('.').pop()[0] + ": " + date3.getDate() + "-" + (date3.getMonth() + 1) + "-" + date3.getFullYear() + ":" + date3.getHours() + ":" + date3.getMinutes() + ".png";
+        fileName = `${fileName.replace(".png", `.${fileExtension}`)}`;        
+      }
       else 
       {
         fileName = nombreImagen;
