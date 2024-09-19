@@ -11,7 +11,6 @@ function NoVisitar(props) {
     };
   
 
-
   return (
     <div  className="NoVisitar">
         <Sidebar visible={sidebarVisible} usuario = {props.usuario}/>
