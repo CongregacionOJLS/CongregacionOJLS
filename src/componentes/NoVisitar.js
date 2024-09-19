@@ -288,5 +288,4 @@ function NoVisitar(props) {
 </div>
   );
 }
-
 export default NoVisitar;
