@@ -27,6 +27,10 @@ details {
   overflow: hidden; /* Asegura que el contenido no sobrepase el contenedor */
 }
 
+li{
+  list-style-type: none;
+}
+
 details summary {  
   font-weight: 400;
   font-size: 1.25rem;

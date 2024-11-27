@@ -64,7 +64,8 @@ function Formulario(props) {
   };
 
   const goToGoogleSheets = () => {
-    window.open("https://docs.google.com/spreadsheets/d/1pT_Sx4XFNcGl1SZpnaVN9ynDHl1AbfeZLLmWlnqNNsE/edit?gid=0#gid=0", "_blank");  };
+    window.open("https://docs.google.com/spreadsheets/d/1pT_Sx4XFNcGl1SZpnaVN9ynDHl1AbfeZLLmWlnqNNsE/edit?gid=0#gid=0", "_blank");  
+  };
 
   return (
    
