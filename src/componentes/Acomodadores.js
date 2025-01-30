@@ -19,11 +19,17 @@ function Acomodadores(props) {
       try
       {
     const querySnapshot = await getDocs(collection(db,"Acomodadores"));
+    const querySnapshot2 = await getDocs(collection(db,"Acomodadores abajo OJLS"));
     querySnapshot.forEach((doc) => {
       list.push({id: doc.id,...doc.data()});
       // doc.data() is never undefined for query doc snapshots
       console.log(doc.id, " => ", doc.data());
     });
+    querySnapshot2.forEach((doc) => {
+      list.push({id: doc.id,...doc.data()});
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+});
     setData(list);
   }catch(err)
   {
@@ -58,6 +64,16 @@ function Acomodadores(props) {
       ) : (
       <img id="imgVida" src={data[0]? data[0].url : ""} alt={'Acom'} />
               ) : "" }
+    <hr/>
+    {data[1]? isPDF(data[1].url) ? (
+      <a href={data[1]? data[1].url : ""} target="_blank" rel="noopener noreferrer">
+        <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={'Acom'} /> {/* Asegúrate de tener un ícono de PDF */}
+        <h3 id='pdfText'>{data[1].name}</h3>
+      </a>
+      ) : (
+      <img id="imgVida" src={data[1]? data[1].url : ""} alt={'Acom'} />
+              ) : "" }
+    <hr/>
     <br/>
     <br/>
     </div>

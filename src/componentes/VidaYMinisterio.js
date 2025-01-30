@@ -17,11 +17,17 @@ function VidaYMinisterio(props) {
       try
       {
     const querySnapshot = await getDocs(collection(db,"Vida y ministerio"));
+    const querySnapshot2 = await getDocs(collection(db,"Vida y ministerio OJLS"));
     querySnapshot.forEach((doc) => {
       list.push({id: doc.id,...doc.data()});
       // doc.data() is never undefined for query doc snapshots
       console.log(doc.id, " => ", doc.data());
     });
+    querySnapshot2.forEach((doc) => {
+      list.push({id: doc.id,...doc.data()});
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+});
     setData(list);
   }catch(err)
   {
@@ -49,6 +55,10 @@ function VidaYMinisterio(props) {
     <hr/>
     <br/>
     <img id="imgVida" src={data[0]? data[0].url: ""}/>
+    <br/>
+    <br/>
+    <hr/>
+    <img id="imgVida" src={data[1]? data[1].url: ""}/>
     <br/>
     <br/>
     </div>

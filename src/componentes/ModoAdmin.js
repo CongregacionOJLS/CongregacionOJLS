@@ -72,22 +72,33 @@ function ModoAdmin(props) {
         nombreImagen = "images/Anuncios" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Anuncios";
         break;
-      case "VidaYMinisterio":
+      case "VidaYMinisterioArriba":
         tabla = "Vida y ministerio";
         nombreImagen = "images/VidaYMinisterio.png";  
-        modificando = "Vida y ministerio";
+        modificando = "Vida y ministerio arriba";
         break;
+        case "VidaYMinisterioAbajo":
+          tabla = "Vida y ministerio abajo OJLS";
+          nombreImagen = "images/VidaYMinisterioAbajo.png";  
+          modificando = "Vida y ministerio abajo";
+          break;
       case "Carritos":
         tabla = "Carritos";
         nombreImagen = "images/Carritos.png";  
         modificando = "Carritos";
         break;
-      case "Acomodadores":
+      case "AcomodadoresArriba":
         const date2 = new Date();
         tabla = "Acomodadores";
         nombreImagen = "images/Acomodadores" + ": " + date2.getDate() + "-" + (date2.getMonth() + 1) + "-" + date2.getFullYear() + ":" + date2.getHours() + ":" + date2.getMinutes() + ".png";  
-        modificando = "Acomodadores";
+        modificando = "Acomodadores arriba";
         break;
+        case "AcomodadoresAbajo":
+          const date4 = new Date();
+          tabla = "Acomodadores abajo OJLS";
+          nombreImagen = "images/AcomodadoresAbajo" + ": " + date4.getDate() + "-" + (date4.getMonth() + 1) + "-" + date4.getFullYear() + ":" + date4.getHours() + ":" + date4.getMinutes() + ".png";  
+          modificando = "Acomodadores abajo";
+          break;
         case "Conferencias":
           const date3 = new Date();
           tabla = "Conferencias";
@@ -162,7 +173,7 @@ function ModoAdmin(props) {
       }
       else 
       {
-        if (tabla == "Acomodadores" || tabla == "Conferencias")
+        if (tabla.includes("Acomodadores")  || tabla == "Conferencias")
         {
           nombreImagen = nombreImagen.split("/")[1];
           await setDoc(doc(db, tabla, 'imagen'), {
@@ -222,9 +233,11 @@ function ModoAdmin(props) {
                 <a href="#" onClick={() => handleMenuItemClick('Territorios')}>Territorios</a>
                 <a href="#" onClick={() => handleMenuItemClick('Edificios')}>Edificios</a>
                 <a href="#" onClick={() => handleMenuItemClick('Anuncios')}>Anuncios</a>
-                <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterio')}>Vida y ministerio</a>
+                <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterioArriba')}>Vida y ministerio arriba</a>
+                <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterioAbajo')}>Vida y ministerio abajo</a>
                 <a href="#" onClick={() => handleMenuItemClick('Carritos')}>Carritos</a>
-                <a href="#" onClick={() => handleMenuItemClick('Acomodadores')}>Acomodadores</a>
+                <a href="#" onClick={() => handleMenuItemClick('AcomodadoresArriba')}>Acomodadores arriba</a>
+                <a href="#" onClick={() => handleMenuItemClick('AcomodadoresAbajo')}>Acomodadores abajo</a>
                 <a href="#" onClick={() => handleMenuItemClick('Conferencias')}>Conferencias</a>
               </div>
             )}
