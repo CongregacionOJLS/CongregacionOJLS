@@ -35,6 +35,10 @@ function Inicio(props) {
     setSidebarVisible(!sidebarVisible);
   };
 
+  const goToGoogleSheets = () => {
+    window.open("https://docs.google.com/spreadsheets/d/1pT_Sx4XFNcGl1SZpnaVN9ynDHl1AbfeZLLmWlnqNNsE/edit?pli=1&gid=162617741#gid=162617741", "_blank");  
+  };
+
   if (loading) {
     return <p>Cargando...</p>;
   }
@@ -76,6 +80,13 @@ function Inicio(props) {
             <h6>{data.Dia2}</h6>
             <br />
           </div>
+          {props.usuario && (
+          <>
+          <button className="ver-formulario-btn" onClick={goToGoogleSheets}>
+            Ver formulario
+          </button>
+          </>
+        )}
         </footer>
       </div>
     </div>
