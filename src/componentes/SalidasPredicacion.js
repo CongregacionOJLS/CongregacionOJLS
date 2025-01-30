@@ -55,6 +55,7 @@ function SalidasPredicacion(props) {
 
   );
   
+  
 }
 
 export default SalidasPredicacion;
