@@ -63,6 +63,7 @@ function Acomodadores(props) {
     </div>
     </div>
 
+
   );
   
 }
