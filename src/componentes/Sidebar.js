@@ -101,6 +101,8 @@ function Sidebar({ visible, usuario }) {
         <hr/>
         <li><a href="Anuncios">ANUNCIOS</a></li>
         <hr />
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeQp48uGSACnp35KrQmuJE2q8oXSF2jXFu94Yi3zbv-CfkRrg/viewform?usp=header" target="_blank">INFORME DEL MES ↗</a></li>
+        <hr />
         {usuario && (
           <>
             <li><a href="Admin">MULTIMEDIA</a></li>
