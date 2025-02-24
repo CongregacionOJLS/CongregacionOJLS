@@ -4,7 +4,7 @@ import './SheetViewer.css';
 const SheetViewer = (props) => {
   const [data, setData] = useState([]); // Inicializa como un array vacío
   const [loading, setLoading] = useState(true); // Controla el estado de carga
-  const apiUrl = "https://api.steinhq.com/v1/storages/668591134d11fd04f00f5b92"; // URL de SteinHQ
+  const apiUrl = "https://api.steinhq.com/v1/storages/67bc9727c088333365795ce4"; // URL de SteinHQ
   const sheetName = props.hoja; 
 
   useEffect(() => {

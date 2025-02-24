@@ -7,7 +7,7 @@ function Inicio(props) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const apiUrl = "https://api.steinhq.com/v1/storages/668591134d11fd04f00f5b92";
+  const apiUrl = "https://api.steinhq.com/v1/storages/67bc9727c088333365795ce4";
   const sheetName = "Inicio"; // Nombre de la hoja donde guardas estos datos
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function Inicio(props) {
   };
 
   const goToGoogleSheets = () => {
-    window.open("https://docs.google.com/spreadsheets/d/1pT_Sx4XFNcGl1SZpnaVN9ynDHl1AbfeZLLmWlnqNNsE/edit?pli=1&gid=162617741#gid=162617741", "_blank");  
+    window.open("https://docs.google.com/spreadsheets/d/1ufxP26vyY0wfTX8MhqPTVYD2GYPSAyPhdJT7uPwGApM/edit?gid=119171419#gid=119171419", "_blank");  
   };
 
   if (loading) {
