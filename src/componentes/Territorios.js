@@ -56,11 +56,14 @@ function Territorios(props) {
 <hr/>
 <img id="imgTer" src={data[0]? data[0].url: ""}/>
 <br/>
+<li><a href="https://www.google.com/maps/d/u/0/embed?mid=1fJO9OLQRpNcyUnsjj1DQSQDyB42NXXw&ehbc=2E312F" target="_blank">MAPA DEL TERRITORIO ↗</a></li>
 <br/>
 <h2>Territorio Edificios</h2>
 <hr/>
 <img id="imgTer" src={data[1]? data[1].url: ""}/>
 <hr/>
+<br/>
+<li><a href="https://www.google.com/maps/d/u/0/embed?mid=10iyHEaOzldN6Wzbt72fssCHEAZPOajM&ehbc=2E312F" target="_blank"> TERRITORIO DE EDIFICIOS ↗</a></li>
 <br/>
 </div>
 </div>
