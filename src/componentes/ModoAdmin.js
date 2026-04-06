@@ -2,246 +2,275 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import './ModoAdmin.css';
 import Sidebar from './Sidebar';
-import appFirebase from '../credenciales';
-import { getAuth } from 'firebase/auth';
-import {
-  addDoc,
-  collection,
-  doc,
-  setDoc,
-  getFirestore,
-  serverTimestamp,
-  updateDoc,
-} from 'firebase/firestore';
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from 'firebase/storage';
-import { tab } from '@testing-library/user-event/dist/tab';
-
-const auth = getAuth(appFirebase);
-export const db = getFirestore(appFirebase);
-export const storage = getStorage(appFirebase);
-
-//variables enviar imagen
-var rutaImagen;
-var nombreImagen;
-var tabla;
-
-var modificando = "...";
-var enviando = false;
+import { supabase } from '../credenciales';
 
 function ModoAdmin(props) {
-  const [file, setFile] = useState(null);
-  const [per, setPerc] = useState(null);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar el menú desplegable
-
-  const handleClick = (event) => {
-    setMenuOpen(!menuOpen); // Cambia el estado para abrir/cerrar el menú desplegable
-  };
-
-  const handleClose = () => {
-    setMenuOpen(false); // Cierra el menú cuando se hace clic fuera de él (si es necesario)
-  };
-
-  const handleMenuItemClick = (option) => {
-    // Aquí puedes manejar la lógica según el item seleccionado
-    switch(option)
-    {
-      case "SalidasDePredicacion":
-        tabla = "Salidas de predicacion";
-        nombreImagen = "images/SalidasDePredicacion.png";
-        modificando = "Salidas De Predicacion";
-        break;
-      case "Territorios":
-        tabla = "Territorios";  
-        nombreImagen = "images/Territorios.png";
-        modificando = "Territorios";
-        break;
-      case "Edificios":
-        tabla = "Edificios";  
-        nombreImagen = "images/Edificios.png";
-        modificando = "Edificios";
-        break;
-      case "Anuncios":
-        const date = new Date();
-        tabla = "Anuncios";
-        nombreImagen = "images/Anuncios" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
-        modificando = "Anuncios";
-        break;
-      case "VidaYMinisterio":
-        tabla = "Vida y ministerio";
-        nombreImagen = "images/VidaYMinisterio.png";  
-        modificando = "Vida y ministerio";
-        break;
-      case "Carritos":
-        tabla = "Carritos";
-        nombreImagen = "images/Carritos.png";  
-        modificando = "Carritos";
-        break;
-      case "Acomodadores":
-        const date2 = new Date();
-        tabla = "Acomodadores";
-        nombreImagen = "images/Acomodadores" + ": " + date2.getDate() + "-" + (date2.getMonth() + 1) + "-" + date2.getFullYear() + ":" + date2.getHours() + ":" + date2.getMinutes() + ".png";  
-        modificando = "Acomodadores";
-        break;
-        case "Conferencias":
-          const date3 = new Date();
-          tabla = "Conferencias";
-          nombreImagen = "images/Conferencias" + ": " + date3.getDate() + "-" + (date3.getMonth() + 1) + "-" + date3.getFullYear() + ":" + date3.getHours() + ":" + date3.getMinutes() + ".png";  
-          modificando = "Conferencias";
-          break;
-    }
-    console.log(option);
-    handleClose(); // Cierra el menú después de seleccionar una opción
-  };
-
-  useEffect(() => {
-    const uploadFile = () => {
-      const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
-      let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Acomodadores") || nombreImagen.includes("Conferencias"))
-      {
-        fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
-      }
-      else 
-      {
-        fileName = nombreImagen;
-      }
-      nombreImagen = fileName; //PUEDE ROMPER TODO????
-      console.log(fileName);
-      /*var fileName = nombreImagen.includes("Anuncios")
-        ? `${nombreImagen.replace(".png", `.${fileExtension}`)}`
-        : nombreImagen; */
-
-      const storageRef = ref(storage, fileName);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-  
-      uploadTask.on(
-        'state_changed',
-        (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-          setPerc(progress);
-        },
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            rutaImagen = downloadURL;
-            console.log('File available at', downloadURL);
-          });
-        }
-      );
-    };
-  
-    if (file) {
-      uploadFile();
-    }
-  }, [file]);
-
-  const handleAdd = async (e) => {
-    e.preventDefault();
-    console.log(db);
-    enviando = true;
-    try {
-      if (tabla == "Anuncios")
-      {
-        nombreImagen = nombreImagen.split("/")[1]; // EXPERIMENTAL
-        await addDoc(collection(db, tabla,), { // addDoc(collection(db, "cities")
-          name: nombreImagen,
-          url: rutaImagen, // Asegúrate de tener la URL correcta aquí
-          timeStamp: serverTimestamp(),
-        });
-        console.log('Documento añadido con éxito');
-        alert("Documento añadido con éxito");
-      }
-      else 
-      {
-        if (tabla == "Acomodadores" || tabla == "Conferencias")
-        {
-          nombreImagen = nombreImagen.split("/")[1];
-          await setDoc(doc(db, tabla, 'imagen'), {
-            name: nombreImagen,
-            url: rutaImagen, // Asegúrate de tener la URL correcta aquí
-            timeStamp: serverTimestamp(),
-          });
-          console.log('Documento añadido con éxito');
-          alert("Documento añadido con éxito");
-        }
-        else
-        {
-          await setDoc(doc(db, tabla, 'imagen'), {
-            name: tabla,
-            url: rutaImagen, // Asegúrate de tener la URL correcta aquí
-            timeStamp: serverTimestamp(),
-          });
-          console.log('Documento añadido con éxito');
-          alert("Documento añadido con éxito");
-        }
-    }
-    } catch (error) {
-      console.error('Error al añadir el documento: ', error);
-    }
-    finally {
-      enviando = false;
-    }
-  };
-
   const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  
+  // Estados de datos
+  const [tablaSeleccionada, setTablaSeleccionada] = useState("");
+  const [modificandoText, setModificandoText] = useState("Selecciona una categoría");
+  const [elementosActuales, setElementosActuales] = useState([]);
+  
+  // Estados de carga y archivos
+  const [cargandoLista, setCargandoLista] = useState(false);
+  const [procesando, setProcesando] = useState(false);
+  const [file, setFile] = useState(null);
+  
+  // Estado para saber si estamos añadiendo nuevo o reemplazando uno existente
+  const [modoAccion, setModoAccion] = useState({ tipo: 'añadir', idBaseDatos: null, urlAntigua: null });
 
-  const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
+  // --- OBTENER DATOS DE LA CATEGORÍA ---
+  const cargarElementos = async (tabla) => {
+    setCargandoLista(true);
+    try {
+      const { data, error } = await supabase
+        .from(tabla)
+        .select('*')
+        .order('timeStamp', { ascending: true }); // Orden para visualización en el admin
+
+      if (error) throw error;
+      setElementosActuales(data);
+    } catch (error) {
+      console.error("Error al cargar elementos:", error.message);
+    } finally {
+      setCargandoLista(false);
+    }
+  };
+
+  const handleMenuItemClick = (tabla, nombreVisual) => {
+    setTablaSeleccionada(tabla);
+    setModificandoText(nombreVisual);
+    setMenuOpen(false);
+    setFile(null); // Limpiamos el input si había algo
+    setModoAccion({ tipo: 'añadir', idBaseDatos: null, urlAntigua: null });
+    cargarElementos(tabla);
+  };
+
+  // --- ELIMINAR ELEMENTO ---
+  const handleEliminar = async (id, url) => {
+    if (!window.confirm("¿Estás seguro de que quieres eliminar este elemento?")) return;
+    
+    setProcesando(true);
+    try {
+      // 1. Extraer la ruta del archivo del URL público para borrarlo del Storage
+      const rutaArchivo = url.split('/multimedia/')[1];
+      if (rutaArchivo) {
+        await supabase.storage.from('multimedia').remove([rutaArchivo]);
+      }
+
+      // 2. Borrar el registro de la base de datos
+      await supabase.from(tablaSeleccionada).delete().eq('id', id);
+      
+      alert("Elemento eliminado con éxito.");
+      cargarElementos(tablaSeleccionada); // Recargar la lista
+    } catch (error) {
+      console.error("Error al eliminar:", error.message);
+      alert("Hubo un error al eliminar el archivo.");
+    } finally {
+      setProcesando(false);
+    }
+  };
+
+  // --- SUBIR O REEMPLAZAR ELEMENTO ---
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!file || !tablaSeleccionada) return;
+
+    setProcesando(true);
+
+    try {
+      const date = new Date();
+      const fileExtension = file.name.split('.').pop();
+      // Usamos OJLS como carpeta base en el bucket para diferenciar si usan el mismo proyecto
+      const fileName = `${tablaSeleccionada.replace(/\s+/g, '')}_${date.getTime()}.${fileExtension}`;
+      const filePath = `OJLS/${fileName}`;
+
+      // 1. Subir nuevo archivo al Storage
+      const { error: uploadError } = await supabase.storage
+        .from('multimedia')
+        .upload(filePath, file);
+
+      if (uploadError) throw uploadError;
+
+      // 2. Obtener la nueva URL
+      const { data: publicUrlData } = supabase.storage
+        .from('multimedia')
+        .getPublicUrl(filePath);
+      const rutaImagenNueva = publicUrlData.publicUrl;
+
+      if (modoAccion.tipo === 'añadir') {
+        // 3a. AÑADIR NUEVO: Insertar en la base de datos
+        await supabase.from(tablaSeleccionada).insert([
+          { name: file.name, url: rutaImagenNueva }
+        ]);
+        alert("Añadido con éxito");
+
+      } else if (modoAccion.tipo === 'reemplazar') {
+        // 3b. REEMPLAZAR: Actualizar base de datos y borrar archivo viejo
+        
+        await supabase.from(tablaSeleccionada)
+          .update({ name: file.name, url: rutaImagenNueva })
+          .eq('id', modoAccion.idBaseDatos);
+        
+        // Borrar imagen vieja del Storage para no acumular basura
+        const rutaAntigua = modoAccion.urlAntigua.split('/multimedia/')[1];
+        if (rutaAntigua) {
+          await supabase.storage.from('multimedia').remove([rutaAntigua]);
+        }
+        
+        alert("Reemplazado con éxito");
+      }
+
+      // Limpiar estados y recargar
+      setFile(null);
+      document.getElementById("file").value = "";
+      setModoAccion({ tipo: 'añadir', idBaseDatos: null, urlAntigua: null });
+      cargarElementos(tablaSeleccionada);
+
+    } catch (error) {
+      console.error('Error:', error.message);
+      alert("Hubo un error en el proceso.");
+    } finally {
+      setProcesando(false);
+    }
+  };
+
+  // --- PREVISUALIZACIÓN ---
+  const renderPreview = () => {
+    if (!file) return null;
+    const isVideo = file.type.startsWith('video/');
+    if (isVideo) return <video width="100%" controls src={URL.createObjectURL(file)} />;
+    if (file.type === 'application/pdf') return <p>Archivo PDF listo para subir: <br/><span style={{wordBreak: 'break-all'}}>{file.name}</span></p>;
+    return <img style={{maxWidth: '100%', maxHeight: '300px', objectFit: 'contain'}} src={URL.createObjectURL(file)} alt="preview" />;
   };
 
   return (
     <div className="ModoAdmin">
       <Sidebar visible={sidebarVisible} usuario={props.usuario} />
 
-      <button className="toggle-btn" onClick={toggleSidebar}>
+      <button className="toggle-btn" onClick={() => setSidebarVisible(!sidebarVisible)}>
         <img src="img territorios/menu2.png" alt="Toggle Sidebar" />
       </button>
 
-      <div className={`content ${sidebarVisible ? 'visibleContent' : 'hiddenContent'}`}>
-        <div id="Titulo">
-          <br />
-          <br />
-          <hr/>
-          <h1>Cambios multimedia</h1>
-          <hr/>
-          {/* Menú desplegable vertical */}
+      <div className={`content ${sidebarVisible ? 'visibleContent' : 'hiddenContent'}`} style={{ boxSizing: 'border-box', width: '100%' }}>
+        <div id="Titulo" style={{ width: '100%', boxSizing: 'border-box' }}>
+          <br /><br /><hr />
+          <h1>Gestor Multimedia OJLS</h1>
+          <hr />
+          
+          {/* MENÚ DE CATEGORÍAS UNIFICADO */}
           <div className="dropdown">
-            <button onClick={handleClick} className="dropbtn">Seleccionar</button>
+            <button onClick={() => setMenuOpen(!menuOpen)} className="dropbtn">
+              {modificandoText} ▼
+            </button>
             {menuOpen && (
               <div className="dropdown-content">
-                <a href="#" onClick={() => handleMenuItemClick('SalidasDePredicacion')}>Salidas de predicacion</a>
-                <a href="#" onClick={() => handleMenuItemClick('Territorios')}>Territorios</a>
-                <a href="#" onClick={() => handleMenuItemClick('Edificios')}>Edificios</a>
-                <a href="#" onClick={() => handleMenuItemClick('Anuncios')}>Anuncios</a>
-                <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterio')}>Vida y ministerio</a>
-                <a href="#" onClick={() => handleMenuItemClick('Carritos')}>Carritos</a>
-                <a href="#" onClick={() => handleMenuItemClick('Acomodadores')}>Acomodadores</a>
-                <a href="#" onClick={() => handleMenuItemClick('Conferencias')}>Conferencias</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('Salidas de predicacion', 'Salidas de predicación'); }}>Salidas de predicación</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('Territorios', 'Territorios y Edificios'); }}>Territorios y Edificios</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('Anuncios', 'Anuncios'); }}>Anuncios</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('VidaYMinisterio', 'Vida y ministerio'); }}>Vida y ministerio</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('Carritos', 'Carritos'); }}>Carritos</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('Acomodadores', 'Acomodadores'); }}>Acomodadores</a>
+                <a href="#!" onClick={(e) => { e.preventDefault(); handleMenuItemClick('Conferencias', 'Conferencias'); }}>Conferencias</a>
               </div>
             )}
           </div>
-          <br/>
-          <span>{modificando}</span> <br/>
-          
-          <form>
-            <input
-              type="file"
-              id="file"
-              accept=".png,.jpg,.jpeg,.pdf,.mp4,.avi,.mov"  // Agrega los tipos de archivo permitidos
-              onChange={(e) => setFile(e.target.files[0])}
-            />
-          </form>
-          <img width='600px' id='imgUpl' src={file ? URL.createObjectURL(file) : ''} /> <br/>
-          <button disabled={per == null || per<100 || enviando == true} onClick={handleAdd}>Enviar</button>
+          <br /><br />
+
+          {/* LISTA DE ELEMENTOS ACTUALES */}
+          {tablaSeleccionada && (
+            <div className="lista-elementos" style={{ backgroundColor: '#f9f9f9', padding: '15px', borderRadius: '10px', marginBottom: '30px', boxSizing: 'border-box', width: '100%' }}>
+              <h3>Contenido actual</h3>
+              {cargandoLista ? <p>Cargando...</p> : (
+                elementosActuales.length === 0 ? <p>No hay contenido en esta sección.</p> : (
+                  elementosActuales.map((item, index) => (
+                    <div key={item.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #ccc', padding: '10px 0', flexWrap: 'wrap', gap: '10px' }}>
+                      
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '1 1 0%', minWidth: 0 }}>
+                        <span style={{ fontWeight: 'bold' }}>#{index + 1}</span>
+                        {item.url.includes('.pdf') ? (
+                          <img src="img territorios/pdf-icon.png" alt="PDF" width="40" style={{flexShrink: 0}} />
+                        ) : (
+                          <img src={item.url} alt="thumbnail" style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '5px', flexShrink: 0 }} />
+                        )}
+                        <span style={{ fontSize: '0.9rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
+                      </div>
+                      
+                      <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+                        <button 
+                          onClick={() => {
+                            setModoAccion({ tipo: 'reemplazar', idBaseDatos: item.id, urlAntigua: item.url });
+                            document.getElementById('file').focus();
+                          }}
+                          style={{ backgroundColor: '#ffc107', color: '#000', padding: '6px 12px', fontSize: '0.8rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
+                        >
+                          Reemplazar
+                        </button>
+                        <button 
+                          onClick={() => handleEliminar(item.id, item.url)}
+                          style={{ backgroundColor: '#dc3545', color: '#fff', padding: '6px 12px', fontSize: '0.8rem', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
+                        >
+                          Eliminar
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )
+              )}
+            </div>
+          )}
+
+          {/* FORMULARIO DE SUBIDA (Sirve para Añadir y Reemplazar) */}
+          {tablaSeleccionada && (
+            <div style={{ padding: '15px', border: '2px dashed #ccc', borderRadius: '10px', boxSizing: 'border-box', width: '100%', overflow: 'hidden' }}>
+              <h3>{modoAccion.tipo === 'añadir' ? 'Añadir Nuevo Elemento' : 'Reemplazando elemento existente...'}</h3>
+              {modoAccion.tipo === 'reemplazar' && (
+                <button 
+                  onClick={() => {
+                    setModoAccion({ tipo: 'añadir', idBaseDatos: null, urlAntigua: null });
+                    setFile(null);
+                    document.getElementById("file").value = "";
+                  }} 
+                  style={{ backgroundColor: '#6c757d', color: 'white', marginBottom: '15px', fontSize: '0.8rem', padding: '6px 12px', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+                  Cancelar Reemplazo
+                </button>
+              )}
+
+              <form style={{ maxWidth: '100%', overflow: 'hidden' }}>
+                <input
+                  type="file"
+                  id="file"
+                  accept=".png,.jpg,.jpeg,.pdf,.mp4,.avi,.mov"
+                  onChange={(e) => setFile(e.target.files[0])}
+                  style={{ maxWidth: '100%' }}
+                />
+              </form>
+              
+              <div style={{ margin: "20px 0", display: 'flex', justifyContent: 'center' }}>
+                 {renderPreview()}
+              </div>
+              
+              <button 
+                disabled={procesando || !file} 
+                onClick={handleSubmit}
+                style={{ 
+                  backgroundColor: modoAccion.tipo === 'añadir' ? '#28a745' : '#ffc107', 
+                  color: modoAccion.tipo === 'añadir' ? '#fff' : '#000',
+                  padding: '10px 20px',
+                  border: 'none',
+                  borderRadius: '5px',
+                  width: '100%',
+                  fontWeight: 'bold',
+                  cursor: (procesando || !file) ? 'not-allowed' : 'pointer',
+                  opacity: (procesando || !file) ? 0.6 : 1
+                }}
+              >
+                {procesando ? "Procesando..." : (modoAccion.tipo === 'añadir' ? "Subir Nuevo" : "Confirmar Reemplazo")}
+              </button>
+            </div>
+          )}
 
         </div>
       </div>

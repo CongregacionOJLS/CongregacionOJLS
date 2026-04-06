@@ -6,7 +6,7 @@ function NoVisitar(props) {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [data, setData] = useState([]); // Datos del sheet
   const [loading, setLoading] = useState(true); // Control de carga
-  const apiUrl = "https://api.steinhq.com/v1/storages/668591134d11fd04f00f5b92"; // URL de SteinHQ
+  const apiUrl = "https://api.steinhq.com/v1/storages/67bc9727c088333365795ce4"; // URL de SteinHQ
   const sheetName = "No Visitar"; // Nombre de la hoja
 
   const toggleSidebar = () => {
@@ -14,7 +14,7 @@ function NoVisitar(props) {
   };
 
   const goToGoogleSheets = () => {
-    window.open("https://docs.google.com/spreadsheets/d/1pT_Sx4XFNcGl1SZpnaVN9ynDHl1AbfeZLLmWlnqNNsE/edit?gid=1920319572#gid=1920319572", "_blank");  
+    window.open("https://docs.google.com/spreadsheets/d/1ufxP26vyY0wfTX8MhqPTVYD2GYPSAyPhdJT7uPwGApM/edit?gid=201621672#gid=201621672", "_blank");  
   };
 
   useEffect(() => {

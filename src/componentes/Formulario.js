@@ -23,7 +23,7 @@ function Formulario(props) {
     try {
       console.log("Datos a enviar:", payload);
 
-      const res = await fetch("https://api.steinhq.com/v1/storages/668591134d11fd04f00f5b92/Sheet1", {
+      const res = await fetch("https://api.steinhq.com/v1/storages/67bc9727c088333365795ce4/Formulario", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ function Formulario(props) {
   };
 
   const goToGoogleSheets = () => {
-    window.open("https://docs.google.com/spreadsheets/d/1pT_Sx4XFNcGl1SZpnaVN9ynDHl1AbfeZLLmWlnqNNsE/edit?gid=0#gid=0", "_blank");  
+    window.open("https://docs.google.com/spreadsheets/d/1ufxP26vyY0wfTX8MhqPTVYD2GYPSAyPhdJT7uPwGApM/edit?gid=0#gid=0", "_blank");  
   };
 
   return (
